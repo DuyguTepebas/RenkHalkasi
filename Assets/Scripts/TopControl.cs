@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
@@ -28,10 +29,6 @@ public class TopControl : MonoBehaviour
 
     private void Start()
     {
-        if (uiManager.isStart==false)
-        {
-            return;
-        }
         scoreText.text = "Score: " + score;
         RastgeleRenkBelirle();
         bestScore = PlayerPrefs.GetInt("BestScore");
@@ -39,7 +36,7 @@ public class TopControl : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
         {
             basildiMi = true;
 

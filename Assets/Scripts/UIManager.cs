@@ -3,27 +3,24 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Net.Mime;
 using UnityEngine;
+using UnityEngine.EventSystems;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private GameObject howToPlayPanel;
-    [SerializeField] private Text tapToPlay;
-    private bool isStart = false;
 
-    private void Start()
+    public void OpenPanel()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (!howToPlayPanel.activeSelf)
         {
-            tapToPlay.gameObject.SetActive(false);
-            isStart = true;
+            howToPlayPanel.SetActive(true);
         }
+        else
+        {
+            howToPlayPanel.SetActive(false);   
+        }
+        
     }
-
-    void OpenPanel()
-    {
-        howToPlayPanel.SetActive(true);
-    }
-
-
+    
 }//class
