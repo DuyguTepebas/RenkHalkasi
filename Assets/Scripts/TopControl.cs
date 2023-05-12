@@ -18,6 +18,7 @@ public class TopControl : MonoBehaviour
     int bestScore = 0;
 
     public GameObject halka, renkTekeri;
+    [SerializeField] private UIManager uiManager;
 
 
     private void Awake()
@@ -27,6 +28,10 @@ public class TopControl : MonoBehaviour
 
     private void Start()
     {
+        if (uiManager.isStart==false)
+        {
+            return;
+        }
         scoreText.text = "Score: " + score;
         RastgeleRenkBelirle();
         bestScore = PlayerPrefs.GetInt("BestScore");
