@@ -7,7 +7,7 @@ using UnityEngine.UI;
 
 public class TopControl : MonoBehaviour
 {
-    Rigidbody2D rb;
+    public Rigidbody2D rb;
     public float ziplamaKuvveti = 3f;
     bool basildiMi = false;
 
@@ -20,7 +20,7 @@ public class TopControl : MonoBehaviour
 
     public GameObject halka, renkTekeri;
     [SerializeField] private UIManager uiManager;
-
+    private RaycastHit2D raycast;
 
     private void Awake()
     {
@@ -36,16 +36,24 @@ public class TopControl : MonoBehaviour
     }
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && !EventSystem.current.IsPointerOverGameObject())
+        if (Input.GetMouseButtonDown(0) )
         {
-            basildiMi = true;
+            Vector2 rayPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            RaycastHit2D hit = Physics2D.Raycast(rayPos, Vector2.zero);
+            Debug.Log(hit.collider);
+            Debug.Log(EventSystem.current.IsPointerOverGameObject());
+            if (hit.collider is null && !EventSystem.current.IsPointerOverGameObject())
+            {
+                basildiMi = true;
+                Jump();
+            }
 
         }
         if (Input.GetMouseButtonUp(0))
         {
             basildiMi = false;
         }
-        if (transform.position.y <= -5)
+        if (transform.position.y <= -6.5)
         {
             score = 0;
             SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
@@ -53,13 +61,18 @@ public class TopControl : MonoBehaviour
         NewBestScore(score);
     }
 
-    private void FixedUpdate()
+    // private void FixedUpdate()
+    // {
+    //     if (basildiMi)
+    //     {
+    //         rb.velocity = Vector2.up * ziplamaKuvveti;
+    //     }
+    //     
+    // }
+
+    void Jump()
     {
-        if (basildiMi)
-        {
-            rb.velocity = Vector2.up * ziplamaKuvveti;
-        }
-        
+        rb.velocity = Vector2.up * ziplamaKuvveti;
     }
 
     private void OnTriggerEnter2D(Collider2D collision)

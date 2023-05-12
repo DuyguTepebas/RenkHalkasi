@@ -295,11 +295,11 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 1029415952}
   - {fileID: 410560873}
   - {fileID: 797945129}
   - {fileID: 1264208037}
   - {fileID: 1346534781}
-  - {fileID: 1029415952}
   m_Father: {fileID: 0}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -388,7 +388,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 144541876}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -3.01, z: 0}
+  m_LocalPosition: {x: 0, y: -2.93, z: 0}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -444,7 +444,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 07980471661684ff8802844e5b2d3352, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ziplamaKuvveti: 3
+  rb: {fileID: 144541879}
+  ziplamaKuvveti: 0
   mevcutRenk: 
   topunRengi: {r: 0, g: 0, b: 0, a: 1}
   turkuaz: {r: 0.20784315, g: 0.8862746, b: 0.9490197, a: 1}
@@ -455,7 +456,7 @@ MonoBehaviour:
   bestScoreText: {fileID: 797945130}
   halka: {fileID: 84135329934388152, guid: d4999d8c3888449a1928dec900d03c09, type: 3}
   renkTekeri: {fileID: 2056159524385951824, guid: e321870ef09004d308836cd51b317da3, type: 3}
-  uiManager: {fileID: 0}
+  uiManager: {fileID: 159128223}
 --- !u!1 &159128221
 GameObject:
   m_ObjectHideFlags: 0
@@ -501,8 +502,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   howToPlayPanel: {fileID: 1346534780}
-  topToPlayPanel: {fileID: 1029415951}
-  player: {fileID: 144541879}
+  player: {fileID: 144541881}
 --- !u!1 &251229302
 GameObject:
   m_ObjectHideFlags: 0
@@ -681,11 +681,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 70645133}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -24, y: 0}
+  m_AnchoredPosition: {x: -24, y: -65}
   m_SizeDelta: {x: 466, y: 150}
   m_Pivot: {x: 1, y: 1}
 --- !u!114 &410560874
@@ -859,11 +859,11 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 70645133}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 12, y: 0}
+  m_AnchoredPosition: {x: 12, y: -65}
   m_SizeDelta: {x: 478, y: 150}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &797945130
@@ -941,12 +941,12 @@ RectTransform:
   m_Children:
   - {fileID: 1817381734}
   m_Father: {fileID: 70645133}
-  m_RootOrder: 4
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: -74.99997}
-  m_SizeDelta: {x: 0, y: -150}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 0, y: -0.00012207}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1029415953
 MonoBehaviour:
@@ -998,7 +998,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8cc4fde66c0424648ba4c89885087e88, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 144541879}
+  player: {fileID: 144541881}
+  graphicRaycaster: {fileID: 70645130}
 --- !u!1 &1264208036
 GameObject:
   m_ObjectHideFlags: 0
@@ -1032,11 +1033,11 @@ RectTransform:
   m_Children:
   - {fileID: 48968692}
   m_Father: {fileID: 70645133}
-  m_RootOrder: 2
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 1}
   m_AnchorMax: {x: 0.5, y: 1}
-  m_AnchoredPosition: {x: 0, y: -30}
+  m_AnchoredPosition: {x: 0, y: -95}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 1}
 --- !u!114 &1264208038
@@ -1165,7 +1166,7 @@ RectTransform:
   m_Children:
   - {fileID: 383041847}
   m_Father: {fileID: 70645133}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -1245,7 +1246,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0}
   m_AnchorMax: {x: 0.5, y: 0}
-  m_AnchoredPosition: {x: 0, y: 398}
+  m_AnchoredPosition: {x: 0, y: 452}
   m_SizeDelta: {x: 700, y: 150}
   m_Pivot: {x: 0.5, y: 0}
 --- !u!114 &1817381735
